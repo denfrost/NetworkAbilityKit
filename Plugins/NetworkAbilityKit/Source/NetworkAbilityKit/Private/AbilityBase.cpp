@@ -274,8 +274,6 @@ void AAbilityBase::CoolDownCycleTick()
 
 void AAbilityBase::ApplyCost_Implementation()
 {
-	if (Role == ROLE_Authority)
-	{
 		bool bHasEnoughCost = true;
 		if (!PairAttrSet)
 		{
@@ -302,7 +300,6 @@ void AAbilityBase::ApplyCost_Implementation()
 
 			UE_LOG(LogTemp, Log, TEXT("Value is now %F"), value);
 		}
-	}
 }
 
 bool AAbilityBase::ApplyCost_Validate()

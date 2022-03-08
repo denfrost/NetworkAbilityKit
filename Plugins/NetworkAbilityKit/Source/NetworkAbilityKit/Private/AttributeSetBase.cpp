@@ -78,15 +78,13 @@ float AAttributeSetBase::GetTmpValueAfterModifiedFloatAttribute(UFloatProperty* 
 
 void AAttributeSetBase::SetFloatAttributeValueByName_Implementation(FName PropName, EAttrModifyMethod ModifyMethod, float ModifyValue)
 {
-	if (Role == ROLE_Authority)
-	{
+
 		UFloatProperty* tmpProp = GetFloatAttribute(PropName);
 		if (tmpProp)
 		{
 			float value = GetTmpValueAfterModifiedFloatAttribute(tmpProp, ModifyMethod, ModifyValue);
 			SetFloatAttributeValue(tmpProp, value);
 		}
-	}
 }
 
 bool AAttributeSetBase::SetFloatAttributeValueByName_Validate(FName PropName, EAttrModifyMethod ModifyMethod, float ModifyValue)
@@ -96,11 +94,8 @@ bool AAttributeSetBase::SetFloatAttributeValueByName_Validate(FName PropName, EA
 
 void AAttributeSetBase::SetFloatAttributeValue_Implementation(UFloatProperty* FloatProp, float NewValue)
 {
-	if (Role == ROLE_Authority)
-	{
 		//UE_LOG(LogTemp, Log, TEXT("Float Property Value Set"));
 		FloatProp->SetPropertyValue_InContainer(this, NewValue);
-	}
 }
 
 bool AAttributeSetBase::SetFloatAttributeValue_Validate(UFloatProperty* FloatProp, float NewValue)

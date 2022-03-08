@@ -71,10 +71,6 @@ bool AStatusSetBase::GetBoolAttributeValue(UBoolProperty* BoolProp)
 
 void AStatusSetBase::SetBoolAttributeByName_Implementation(FName PropName, bool bNewBool)
 {
-	UE_LOG(LogTemp, Log, TEXT("Running Logic"));
-	if (Role == ROLE_Authority)
-	{
-		UE_LOG(LogTemp, Log, TEXT("Running Logic On Server"));
 		bool Success = false;
 		UBoolProperty* BoolProp;
 		bool PropValue = false;
@@ -88,11 +84,6 @@ void AStatusSetBase::SetBoolAttributeByName_Implementation(FName PropName, bool 
 		{
 			UE_LOG(LogTemp, Log, TEXT("Property Not Found"));
 		}
-	}
-	else
-	{
-		UE_LOG(LogTemp, Log, TEXT("Running Logic On Client"));
-	}
 }
 
 bool AStatusSetBase::SetBoolAttributeByName_Validate(FName PropName, bool bNewBool)

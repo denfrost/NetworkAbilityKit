@@ -4,6 +4,7 @@
 
 //#include "NetworkAbility.h"
 #include "FogOfWarManager.h"
+#include <Rendering/Texture2DResource.h>
 
 // Sets default values
 AFogOfWarManager::AFogOfWarManager()
@@ -106,7 +107,7 @@ void AFogOfWarManager::UpdateTextureRegions(UTexture2D* Texture, int32 MipIndex,
 
 		FUpdateTextureRegionsData* RegionData = new FUpdateTextureRegionsData;
 
-		RegionData->Texture2DResource = (FTexture2DResource*)Texture->Resource;
+		RegionData->Texture2DResource = (FTexture2DResource*)Texture->Resource;;
 		RegionData->MipIndex = MipIndex;
 		RegionData->NumRegions = NumRegions;
 		RegionData->Regions = Regions;

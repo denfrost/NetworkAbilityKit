@@ -11,7 +11,7 @@ public class NetworkAbility : ModuleRules
 	
 		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "UMG", "Slate", "SlateCore", "OnlineSubsystem", "OnlineSubsystemSteam", "RHI", "RenderCore", "NetworkAbilityKit" });
 
-		PrivateDependencyModuleNames.AddRange(new string[] {  });
+		PrivateDependencyModuleNames.AddRange(new string[] { "RHI", "RenderCore" });
 
 		//PublicIncludePaths.Add(Path.Combine(ModuleDirectory ,"NetworkAbilityKit/Public"));
 		// Uncomment if you are using Slate UI

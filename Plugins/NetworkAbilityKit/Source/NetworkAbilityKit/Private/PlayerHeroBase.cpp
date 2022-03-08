@@ -136,10 +136,6 @@ void APlayerHeroBase::PossessedBy(AController* NewController)
 
 float APlayerHeroBase::TakeDamage(float DamageAmount, struct FDamageEvent const & DamageEvent, class AController * EventInstigator, AActor * DamageCauser)
 {
-	if (Role != ROLE_Authority)
-	{
-		return 0.0f;
-	}
 	float ActualDamage = Super::TakeDamage(DamageAmount, DamageEvent, EventInstigator, DamageCauser);
 	UAttributeComp* AttrComp = this->FindComponentByClass<UAttributeComp>();
 	if (!AttrComp)

@@ -146,10 +146,7 @@ void AModifierBase::OnBlocked()
 
 void AModifierBase::StartIntervalThink_Implementation(float DeltaTick)
 {
-	if (Role == ROLE_Authority)
-	{
 		GetWorld()->GetTimerManager().SetTimer(IntervalThinkTimerHandle, this, &AModifierBase::OnIntervalThink, DeltaTick, true);
-	}
 }
 
 bool AModifierBase::StartIntervalThink_Validate(float DeltaTick)
